@@ -15,6 +15,10 @@ def normalize_string(answer: str) -> str:
     return answer.strip().lower().strip('.,!?()')
 
 class Card():
+    '''
+    This class builds an individual flashcard from questions and answers in a dictionary. It then checks if 
+    the users answer is correct or not.
+    '''
     def __init__(self, question: str, answers: list):
         self.question = question
         self.answers = answers
@@ -25,11 +29,8 @@ class Card():
 
         Input:
             user_answer (str) The users answer.
-            accepted_answers (list) A list of possible/acceptable answers.
         Returns:
-            user_answer in accepted_answers (bool) True/False if the answer is correct/incorrect
-        Example:
-            user_answer = 'tuple' in ['tuple'] = acceptable_answers -> True
+            (bool) True/False if the answer is correct/incorrect
         '''
         # normalize the users answer 
         user_answer = normalize_string(user_answer)
@@ -54,6 +55,11 @@ class Card():
 
 
 class Deck():
+    '''
+    This class builds a deck of flashcards which are created in Card(). 
+    It has a method for adding new flashcards to the deck.
+    It has a method for shuffling the deck so questions are not asked in the same order each time.
+    '''
     def __init__(self, name: str, cards = None):
         self.name = name
         if cards is None:
