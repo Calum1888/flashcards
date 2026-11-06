@@ -1,0 +1,40 @@
+    [{
+        "question": "What type does *args collect extra positional arguments into?",
+        "answers": ["tuple"]
+    },
+    {
+        "question": "What type does **kwargs collect extra keyword arguments into?",
+        "answers": ["dict", "dictionary"]
+    },
+    {
+        "question": "What does a function return if it has no return statement?",
+        "answers": ["None"]
+    },
+    {
+        "question": "Which keyword skips the rest of the current loop iteration?",
+        "answers": ["continue"]
+    },
+    {
+        "question": "Which keyword exits a loop immediately?",
+        "answers": ["break"]
+    },
+    {
+        "question": "Which string method removes whitespace from both ends of a string?",
+        "answers": ["strip", "strip()", ".strip()"]
+    },
+    {
+        "question": "Is a tuple mutable or immutable?",
+        "answers": ["immutable"]
+    },
+    {
+        "question": "How many items are in the list returned by \"a,b,c\".split(\",\")?",
+        "answers": ["3", "three"]
+    },
+    {
+        "question": "Which exception is raised by int(\"abc\")?",
+        "answers": ["ValueError"]
+    },
+    {
+        "question": "Which built-in function gives you both the index and the item when looping?",
+        "answers": ["enumerate", "enumerate()"]
+    }]
