@@ -16,6 +16,9 @@ def load_deck(name: str, decks_dir: Path = DECKS_DIR) -> Deck:
     return Deck.from_dicts(name, data)
 
 def save_deck(deck: Deck, decks_dir: Path = DECKS_DIR) -> None:
+    '''
+    Saves the deck with any new flashcards that have been added to the deck.
+    '''
 
     decks_dir.mkdir(parents=True, exist_ok=True)
 
