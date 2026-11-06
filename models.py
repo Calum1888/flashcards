@@ -46,6 +46,18 @@ class Card():
     def __str__(self):
         return f'Question: {self.question}'
 
+    def to_dict(self) -> dict:
+        '''
+        Builds a dictionary from a card.
+        '''
+
+        d = {
+            "question": self.question,
+            "answers": self.answers
+        }
+
+        return d
+
     @classmethod
     def from_dict(cls, flashcard_dict: dict):
         '''
