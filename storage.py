@@ -1,6 +1,6 @@
 import json
 from pathlib import Path
-from models import Deck
+from models import Deck, Card
 
 DECKS_DIR = Path(__file__).parent / "decks"
 
@@ -14,3 +14,14 @@ def load_deck(name: str, decks_dir: Path = DECKS_DIR) -> Deck:
         data = json.load(f)
 
     return Deck.from_dicts(name, data)
+
+def save_deck(deck: Deck, decks_dir: Path = DECKS_DIR) -> None:
+
+    decks_dir.mkdir(parents=True, exist_ok=True)
+
+    data = [card.to_dict() for card in deck]
+
+    path = decks_dir / f"{deck.name}"
+
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2)
