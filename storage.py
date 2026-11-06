@@ -2,7 +2,9 @@ import json
 from pathlib import Path
 from models import Deck
 
-def load_deck(name: str, decks_dir: Path = Path("decks")) -> Deck:
+DECKS_DIR = Path(__file__).parent / "decks"
+
+def load_deck(name: str, decks_dir: Path = DECKS_DIR) -> Deck:
     '''
     Loads a deck of flashcards from a json file and returns the deck.
     '''
