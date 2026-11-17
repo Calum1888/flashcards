@@ -1,9 +1,6 @@
 from flashcards.models import normalize_string, Card, Deck
 from flashcards.storage import load_deck
-from flashcards.exceptions import FlashcardError
-
-
-card_data = load_deck('python')
+from flashcards.exceptions import FlashcardError, InvalidCardError
 
 def flashcard(card: Card) -> str:
     '''
@@ -87,6 +84,15 @@ def show_summary(score: int, answered: int) -> str:
         else:
             return f'You answered {answered} questions and got {pct}%. Keep practicing!'
 
+def add_card() -> Card:
+    """Prompt the user for a question and comma-separated answers, and return a new Card."""
+    question = input("Question: ").strip()
+    if not question:
+        raise InvalidCardError("The question can't be empty.")
 
+    raw_answers = input("Answer(s), separated by commas: ")
+    answers = [piece.strip() for piece in raw_answers.split(",") if piece.strip()]
+    if not answers:
+        raise InvalidCardError("You need at least one answer.")
 
-
+    return Card(question, answers)
