@@ -1,5 +1,7 @@
 from models import normalize_string, Card, Deck
 from storage import load_deck
+from exceptions import FlashcardError
+
 
 card_data = load_deck('python')
 
@@ -86,13 +88,19 @@ def show_summary(score: int, answered: int) -> str:
             return f'You answered {answered} questions and got {pct}%. Keep practicing!'
 
 def main() -> None:
-    """Run a flashcard quiz and print the summary.
-    """
     print("Flashcard quiz. Type 'skip' to skip a question or 'quit' to stop.\n")
-    deck = Deck.from_dicts("python", card_data)
+
+    try:
+        deck = load_deck("python")
+    except FlashcardError as err:
+        print(f"Error: {err}")
+        return
+
     score, answered = run_quiz(deck)
     print(show_summary(score, answered))
 
-
 if __name__ == "__main__":
     main()
+
+
+
