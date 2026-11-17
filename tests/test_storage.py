@@ -1,7 +1,6 @@
 import json
 
 import pytest
-
 from flashcards.models import Deck
 from flashcards.storage import save_deck, load_deck, list_decks
 from flashcards.exceptions import DeckNotFoundError, DeckFormatError
@@ -59,3 +58,9 @@ def test_list_decks_ignores_non_json_files(tmp_path, sample_deck):
 
 def test_list_decks_missing_folder(tmp_path):
     assert list_decks(decks_dir=tmp_path / "does_not_exist") == []
+
+def test_all_bundled_decks_load():
+    names = list_decks()
+    assert names, "no decks found"
+    for name in names:
+        assert len(load_deck(name)) > 0
