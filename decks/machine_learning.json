@@ -1,0 +1,289 @@
+[
+  {
+    "question": "What is learning from labelled data called?",
+    "answers": [
+      "supervised learning",
+      "supervised"
+    ]
+  },
+  {
+    "question": "What is learning from unlabelled data called?",
+    "answers": [
+      "unsupervised learning",
+      "unsupervised"
+    ]
+  },
+  {
+    "question": "Predicting a continuous value is what type of task?",
+    "answers": [
+      "regression"
+    ]
+  },
+  {
+    "question": "Predicting a category is what type of task?",
+    "answers": [
+      "classification"
+    ]
+  },
+  {
+    "question": "What is it called when a model does well on training data but poorly on unseen data?",
+    "answers": [
+      "overfitting"
+    ]
+  },
+  {
+    "question": "What is it called when a model is too simple to capture the patterns in the data?",
+    "answers": [
+      "underfitting"
+    ]
+  },
+  {
+    "question": "In the bias-variance trade-off, which error comes from overly simple assumptions?",
+    "answers": [
+      "bias"
+    ]
+  },
+  {
+    "question": "In the bias-variance trade-off, which error comes from sensitivity to small changes in the training data?",
+    "answers": [
+      "variance"
+    ]
+  },
+  {
+    "question": "Which technique splits the data into k parts and trains/evaluates k times?",
+    "answers": [
+      "k-fold cross-validation",
+      "k-fold cross validation",
+      "cross-validation",
+      "cross validation"
+    ]
+  },
+  {
+    "question": "Which data split is held back for the final evaluation only?",
+    "answers": [
+      "test set",
+      "test data",
+      "holdout set"
+    ]
+  },
+  {
+    "question": "Which data split is used to tune hyperparameters?",
+    "answers": [
+      "validation set",
+      "validation data"
+    ]
+  },
+  {
+    "question": "What are settings chosen before training, such as the learning rate, called?",
+    "answers": [
+      "hyperparameters",
+      "hyperparameter"
+    ]
+  },
+  {
+    "question": "Which optimisation algorithm updates parameters in the direction of the negative gradient?",
+    "answers": [
+      "gradient descent"
+    ]
+  },
+  {
+    "question": "Which hyperparameter controls the step size in gradient descent?",
+    "answers": [
+      "learning rate"
+    ]
+  },
+  {
+    "question": "What is the function that measures how wrong a model's predictions are called?",
+    "answers": [
+      "loss function",
+      "loss",
+      "cost function"
+    ]
+  },
+  {
+    "question": "What is the most common loss function for regression?",
+    "answers": [
+      "mean squared error",
+      "mse"
+    ]
+  },
+  {
+    "question": "What is the most common loss function for binary classification?",
+    "answers": [
+      "binary cross-entropy",
+      "binary cross entropy",
+      "cross-entropy",
+      "cross entropy",
+      "log loss"
+    ]
+  },
+  {
+    "question": "Which regularisation adds the sum of absolute weights to the loss?",
+    "answers": [
+      "l1",
+      "lasso",
+      "l1 regularisation",
+      "l1 regularization"
+    ]
+  },
+  {
+    "question": "Which regularisation adds the sum of squared weights to the loss?",
+    "answers": [
+      "l2",
+      "ridge",
+      "l2 regularisation",
+      "l2 regularization",
+      "weight decay"
+    ]
+  },
+  {
+    "question": "Which regularisation tends to push some weights to exactly zero?",
+    "answers": [
+      "l1",
+      "lasso"
+    ]
+  },
+  {
+    "question": "Of all predicted positives, the fraction that are actually positive is called what?",
+    "answers": [
+      "precision"
+    ]
+  },
+  {
+    "question": "Of all actual positives, the fraction the model correctly identifies is called what?",
+    "answers": [
+      "recall",
+      "sensitivity"
+    ]
+  },
+  {
+    "question": "Which metric is the harmonic mean of precision and recall?",
+    "answers": [
+      "f1 score",
+      "f1",
+      "f1-score"
+    ]
+  },
+  {
+    "question": "What is the table of true/false positives and negatives called?",
+    "answers": [
+      "confusion matrix"
+    ]
+  },
+  {
+    "question": "In ROC AUC, what does AUC stand for?",
+    "answers": [
+      "area under the curve",
+      "area under curve"
+    ]
+  },
+  {
+    "question": "Which activation function outputs max(0, x)?",
+    "answers": [
+      "relu"
+    ]
+  },
+  {
+    "question": "Which activation function squashes values into the range 0 to 1?",
+    "answers": [
+      "sigmoid",
+      "logistic"
+    ]
+  },
+  {
+    "question": "Which function turns a vector of logits into probabilities that sum to 1?",
+    "answers": [
+      "softmax"
+    ]
+  },
+  {
+    "question": "Which algorithm computes gradients through a neural network layer by layer?",
+    "answers": [
+      "backpropagation",
+      "backprop"
+    ]
+  },
+  {
+    "question": "Which regularisation technique randomly sets neurons to zero during training?",
+    "answers": [
+      "dropout"
+    ]
+  },
+  {
+    "question": "What is one full pass through the training set called?",
+    "answers": [
+      "epoch",
+      "an epoch"
+    ]
+  },
+  {
+    "question": "Which ensemble trains many decision trees on bootstrap samples and averages them?",
+    "answers": [
+      "random forest"
+    ]
+  },
+  {
+    "question": "Which ensemble approach trains models sequentially, each correcting the previous one's errors?",
+    "answers": [
+      "boosting",
+      "gradient boosting"
+    ]
+  },
+  {
+    "question": "Which clustering algorithm assigns each point to the nearest of k centroids?",
+    "answers": [
+      "k-means",
+      "kmeans",
+      "k means"
+    ]
+  },
+  {
+    "question": "Which dimensionality-reduction method projects data onto the directions of maximum variance?",
+    "answers": [
+      "pca",
+      "principal component analysis"
+    ]
+  },
+  {
+    "question": "What is converting a categorical feature into separate binary columns called?",
+    "answers": [
+      "one-hot encoding",
+      "one hot encoding",
+      "one-hot"
+    ]
+  },
+  {
+    "question": "What is rescaling a feature to mean 0 and standard deviation 1 called?",
+    "answers": [
+      "standardisation",
+      "standardization",
+      "z-score normalisation",
+      "z-score normalization"
+    ]
+  },
+  {
+    "question": "What is it called when information from the test set leaks into training?",
+    "answers": [
+      "data leakage",
+      "leakage"
+    ]
+  },
+  {
+    "question": "In transformers, which mechanism lets each token weigh the importance of other tokens?",
+    "answers": [
+      "attention",
+      "self-attention",
+      "self attention"
+    ]
+  },
+  {
+    "question": "Which algorithm classifies a point by the majority label of its closest training points?",
+    "answers": [
+      "k-nearest neighbours",
+      "k-nearest neighbors",
+      "k nearest neighbours",
+      "k nearest neighbors",
+      "knn"
+    ]
+  }
+]

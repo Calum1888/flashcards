@@ -1,40 +1,287 @@
-    [{
-        "question": "What type does *args collect extra positional arguments into?",
-        "answers": ["tuple"]
-    },
-    {
-        "question": "What type does **kwargs collect extra keyword arguments into?",
-        "answers": ["dict", "dictionary"]
-    },
-    {
-        "question": "What does a function return if it has no return statement?",
-        "answers": ["None"]
-    },
-    {
-        "question": "Which keyword skips the rest of the current loop iteration?",
-        "answers": ["continue"]
-    },
-    {
-        "question": "Which keyword exits a loop immediately?",
-        "answers": ["break"]
-    },
-    {
-        "question": "Which string method removes whitespace from both ends of a string?",
-        "answers": ["strip", "strip()", ".strip()"]
-    },
-    {
-        "question": "Is a tuple mutable or immutable?",
-        "answers": ["immutable"]
-    },
-    {
-        "question": "How many items are in the list returned by \"a,b,c\".split(\",\")?",
-        "answers": ["3", "three"]
-    },
-    {
-        "question": "Which exception is raised by int(\"abc\")?",
-        "answers": ["ValueError"]
-    },
-    {
-        "question": "Which built-in function gives you both the index and the item when looping?",
-        "answers": ["enumerate", "enumerate()"]
-    }]
+[
+  {
+    "question": "What type does *args collect extra positional arguments into?",
+    "answers": [
+      "tuple"
+    ]
+  },
+  {
+    "question": "What type does **kwargs collect extra keyword arguments into?",
+    "answers": [
+      "dict",
+      "dictionary"
+    ]
+  },
+  {
+    "question": "What does a function return if it has no return statement?",
+    "answers": [
+      "None"
+    ]
+  },
+  {
+    "question": "Which keyword skips the rest of the current loop iteration?",
+    "answers": [
+      "continue"
+    ]
+  },
+  {
+    "question": "Which keyword exits a loop immediately?",
+    "answers": [
+      "break"
+    ]
+  },
+  {
+    "question": "Which string method removes whitespace from both ends of a string?",
+    "answers": [
+      "strip",
+      "strip()",
+      ".strip()"
+    ]
+  },
+  {
+    "question": "Is a tuple mutable or immutable?",
+    "answers": [
+      "immutable"
+    ]
+  },
+  {
+    "question": "How many items are in the list returned by \"a,b,c\".split(\",\")?",
+    "answers": [
+      "3",
+      "three"
+    ]
+  },
+  {
+    "question": "Which exception is raised by int(\"abc\")?",
+    "answers": [
+      "ValueError"
+    ]
+  },
+  {
+    "question": "Which built-in function gives you both the index and the item when looping?",
+    "answers": [
+      "enumerate",
+      "enumerate()"
+    ]
+  },
+  {
+    "question": "Is a list mutable or immutable?",
+    "answers": [
+      "mutable"
+    ]
+  },
+  {
+    "question": "Which built-in function returns the number of items in a list?",
+    "answers": [
+      "len",
+      "len()"
+    ]
+  },
+  {
+    "question": "Which keyword defines a function?",
+    "answers": [
+      "def"
+    ]
+  },
+  {
+    "question": "Which keyword defines a class?",
+    "answers": [
+      "class"
+    ]
+  },
+  {
+    "question": "What is the // operator called?",
+    "answers": [
+      "floor division",
+      "integer division"
+    ]
+  },
+  {
+    "question": "Which operator gives the remainder of a division?",
+    "answers": [
+      "%",
+      "modulo",
+      "modulus"
+    ]
+  },
+  {
+    "question": "What does 2 ** 3 evaluate to?",
+    "answers": [
+      "8",
+      "eight"
+    ]
+  },
+  {
+    "question": "What type is the result of 7 / 2?",
+    "answers": [
+      "float"
+    ]
+  },
+  {
+    "question": "Which string method joins a list of strings using a separator?",
+    "answers": [
+      "join",
+      "join()",
+      ".join()"
+    ]
+  },
+  {
+    "question": "Which string method splits a string into a list?",
+    "answers": [
+      "split",
+      "split()",
+      ".split()"
+    ]
+  },
+  {
+    "question": "What does \"abc\"[::-1] return?",
+    "answers": [
+      "cba",
+      "'cba'",
+      "\"cba\""
+    ]
+  },
+  {
+    "question": "What does bool(\"\") evaluate to?",
+    "answers": [
+      "False"
+    ]
+  },
+  {
+    "question": "When used on two strings, what does the in operator check for?",
+    "answers": [
+      "substring",
+      "a substring"
+    ]
+  },
+  {
+    "question": "Which keyword checks whether two names refer to the same object?",
+    "answers": [
+      "is"
+    ]
+  },
+  {
+    "question": "Which built-in data structure stores unique, unordered items?",
+    "answers": [
+      "set"
+    ]
+  },
+  {
+    "question": "Which built-in function pairs up items from two or more iterables?",
+    "answers": [
+      "zip",
+      "zip()"
+    ]
+  },
+  {
+    "question": "Which keyword is used alongside try to catch an exception?",
+    "answers": [
+      "except"
+    ]
+  },
+  {
+    "question": "Which block runs whether or not an exception occurred?",
+    "answers": [
+      "finally"
+    ]
+  },
+  {
+    "question": "Which keyword is used to throw an exception?",
+    "answers": [
+      "raise"
+    ]
+  },
+  {
+    "question": "Which exception is raised when you access a missing dictionary key?",
+    "answers": [
+      "KeyError"
+    ]
+  },
+  {
+    "question": "Which exception is raised when a list index is out of range?",
+    "answers": [
+      "IndexError"
+    ]
+  },
+  {
+    "question": "Which exception does 1 / 0 raise?",
+    "answers": [
+      "ZeroDivisionError"
+    ]
+  },
+  {
+    "question": "What is the first parameter of an instance method conventionally called?",
+    "answers": [
+      "self"
+    ]
+  },
+  {
+    "question": "What is the first parameter of a class method conventionally called?",
+    "answers": [
+      "cls"
+    ]
+  },
+  {
+    "question": "Which decorator makes a method receive the class instead of the instance?",
+    "answers": [
+      "@classmethod",
+      "classmethod"
+    ]
+  },
+  {
+    "question": "Which dunder method initialises a new object?",
+    "answers": [
+      "__init__"
+    ]
+  },
+  {
+    "question": "Which dunder method is called by len()?",
+    "answers": [
+      "__len__"
+    ]
+  },
+  {
+    "question": "Which dunder method gives the developer-facing string representation of an object?",
+    "answers": [
+      "__repr__"
+    ]
+  },
+  {
+    "question": "Which keyword creates a small anonymous function?",
+    "answers": [
+      "lambda"
+    ]
+  },
+  {
+    "question": "Which keyword turns a function into a generator?",
+    "answers": [
+      "yield"
+    ]
+  },
+  {
+    "question": "What does a list's append() method return?",
+    "answers": [
+      "None"
+    ]
+  },
+  {
+    "question": "What is the value of __name__ when a file is run directly?",
+    "answers": [
+      "__main__",
+      "'__main__'",
+      "\"__main__\""
+    ]
+  },
+  {
+    "question": "Which statement is used with open() so the file is closed automatically?",
+    "answers": [
+      "with"
+    ]
+  },
+  {
+    "question": "Which standard library module provides the Path class?",
+    "answers": [
+      "pathlib"
+    ]
+  }
+]

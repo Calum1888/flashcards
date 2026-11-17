@@ -1,0 +1,285 @@
+[
+  {
+    "question": "Which clause filters rows before grouping?",
+    "answers": [
+      "where"
+    ]
+  },
+  {
+    "question": "Which clause filters groups after aggregation?",
+    "answers": [
+      "having"
+    ]
+  },
+  {
+    "question": "Which clause sorts the results?",
+    "answers": [
+      "order by"
+    ]
+  },
+  {
+    "question": "Which keyword sorts results in descending order?",
+    "answers": [
+      "desc"
+    ]
+  },
+  {
+    "question": "Which keyword removes duplicate rows from the results?",
+    "answers": [
+      "distinct"
+    ]
+  },
+  {
+    "question": "Which clause groups rows so aggregate functions can be applied?",
+    "answers": [
+      "group by"
+    ]
+  },
+  {
+    "question": "In PostgreSQL, MySQL and SQLite, which clause restricts the number of rows returned?",
+    "answers": [
+      "limit"
+    ]
+  },
+  {
+    "question": "Which aggregate function counts rows?",
+    "answers": [
+      "count",
+      "count()",
+      "count(*)"
+    ]
+  },
+  {
+    "question": "Which aggregate function calculates the mean?",
+    "answers": [
+      "avg",
+      "avg()"
+    ]
+  },
+  {
+    "question": "Which join returns only rows that match in both tables?",
+    "answers": [
+      "inner join",
+      "join"
+    ]
+  },
+  {
+    "question": "Which join returns all rows from the left table plus matching rows from the right?",
+    "answers": [
+      "left join",
+      "left outer join"
+    ]
+  },
+  {
+    "question": "Which join returns all rows from both tables, matched where possible?",
+    "answers": [
+      "full outer join",
+      "full join"
+    ]
+  },
+  {
+    "question": "Which join returns every combination of rows from two tables?",
+    "answers": [
+      "cross join"
+    ]
+  },
+  {
+    "question": "What is joining a table to itself called?",
+    "answers": [
+      "self join",
+      "self-join"
+    ]
+  },
+  {
+    "question": "Which operator combines two query results and removes duplicates?",
+    "answers": [
+      "union"
+    ]
+  },
+  {
+    "question": "Which operator combines two query results and keeps duplicates?",
+    "answers": [
+      "union all"
+    ]
+  },
+  {
+    "question": "Which operator is used for pattern matching on strings?",
+    "answers": [
+      "like"
+    ]
+  },
+  {
+    "question": "In a LIKE pattern, which wildcard matches any sequence of characters?",
+    "answers": [
+      "%"
+    ]
+  },
+  {
+    "question": "In a LIKE pattern, which wildcard matches exactly one character?",
+    "answers": [
+      "_"
+    ]
+  },
+  {
+    "question": "How do you check whether a column value is missing?",
+    "answers": [
+      "is null"
+    ]
+  },
+  {
+    "question": "Which function returns the first non-NULL value in its arguments?",
+    "answers": [
+      "coalesce",
+      "coalesce()"
+    ]
+  },
+  {
+    "question": "Which operator checks whether a value matches any value in a list?",
+    "answers": [
+      "in"
+    ]
+  },
+  {
+    "question": "Which operator checks whether a value falls within an inclusive range?",
+    "answers": [
+      "between"
+    ]
+  },
+  {
+    "question": "What is a column that uniquely identifies each row called?",
+    "answers": [
+      "primary key"
+    ]
+  },
+  {
+    "question": "What is a column that references the primary key of another table called?",
+    "answers": [
+      "foreign key"
+    ]
+  },
+  {
+    "question": "Which statement adds new rows to a table?",
+    "answers": [
+      "insert",
+      "insert into"
+    ]
+  },
+  {
+    "question": "Which statement modifies existing rows?",
+    "answers": [
+      "update"
+    ]
+  },
+  {
+    "question": "Which statement removes rows from a table?",
+    "answers": [
+      "delete",
+      "delete from"
+    ]
+  },
+  {
+    "question": "Which statement creates a new table?",
+    "answers": [
+      "create table"
+    ]
+  },
+  {
+    "question": "Which statement removes a table and all its data entirely?",
+    "answers": [
+      "drop table",
+      "drop"
+    ]
+  },
+  {
+    "question": "Which expression provides if/else logic inside a query?",
+    "answers": [
+      "case",
+      "case when"
+    ]
+  },
+  {
+    "question": "What is a query nested inside another query called?",
+    "answers": [
+      "subquery",
+      "sub-query",
+      "nested query"
+    ]
+  },
+  {
+    "question": "Which keyword starts a common table expression?",
+    "answers": [
+      "with"
+    ]
+  },
+  {
+    "question": "What does CTE stand for?",
+    "answers": [
+      "common table expression"
+    ]
+  },
+  {
+    "question": "Which keyword defines the window for a window function?",
+    "answers": [
+      "over",
+      "over()"
+    ]
+  },
+  {
+    "question": "Which window function numbers rows 1, 2, 3... with no ties?",
+    "answers": [
+      "row_number",
+      "row_number()"
+    ]
+  },
+  {
+    "question": "Which window function gives tied rows the same rank and leaves gaps after them?",
+    "answers": [
+      "rank",
+      "rank()"
+    ]
+  },
+  {
+    "question": "Which window function gives tied rows the same rank without leaving gaps?",
+    "answers": [
+      "dense_rank",
+      "dense_rank()"
+    ]
+  },
+  {
+    "question": "Inside OVER(), which clause splits rows into separate groups?",
+    "answers": [
+      "partition by"
+    ]
+  },
+  {
+    "question": "What database structure speeds up lookups on a column?",
+    "answers": [
+      "index"
+    ]
+  },
+  {
+    "question": "What is a unit of work that either completes fully or not at all called?",
+    "answers": [
+      "transaction"
+    ]
+  },
+  {
+    "question": "In ACID, what does the A stand for?",
+    "answers": [
+      "atomicity"
+    ]
+  },
+  {
+    "question": "What is organising tables to reduce redundancy called?",
+    "answers": [
+      "normalisation",
+      "normalization"
+    ]
+  },
+  {
+    "question": "Of FROM, WHERE and SELECT, which is logically processed first?",
+    "answers": [
+      "from"
+    ]
+  }
+]
