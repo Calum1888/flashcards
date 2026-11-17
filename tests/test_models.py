@@ -1,0 +1,43 @@
+from models import Card, Deck
+
+def test_correct_answer_is_accepted():
+    card = Card("Is a tuple mutable?", ["immutable"])
+    assert card.check_answer("immutable")
+
+def test_check_answer_ignores_case_and_punctuation():
+    card = Card("Is a tuple mutable?", ["immutable"])   
+    result = card.check_answer(" Immutable. ")          
+    assert result is True                
+
+def test_reject_wrong_answer():
+    card = Card("Is a tuple mutable?", ["immutable"])   
+    result = card.check_answer("mutable")          
+    assert result is False
+
+def test_reject_empty_answer():
+    card = Card("Is a tuple mutable?", ["immutable"])
+    result = card.check_answer("")
+    assert result is False
+
+def test_reject_partial_answers():
+    card = Card("Is a tuple mutable?", ["immutable"])
+    result = card.check_answer("immut")
+    assert result is False
+
+def test_additional_answers_accepted():
+    card = Card("What type does **kwargs collect extra keyword arguments into?", ["dict", "dictionary"])
+    result = card.check_answer("dictionary")
+    assert result is True
+
+def test_check_doesnt_alter_card_answers():
+    card = Card("Which exception is raised by int(\"abc\")?", ["ValueError"])
+    card.check_answer("value")
+    assert card.answers == ["ValueError"] 
+
+def test_from_to_dict_equality():
+    card = Card("Which exception is raised by int(\"abc\")?", ["ValueError"])
+    copy = Card.from_dict(card.to_dict())
+    assert copy.question == card.question 
+    assert copy.answers == card.answers 
+
+
