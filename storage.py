@@ -36,8 +36,8 @@ def save_deck(deck: Deck, decks_dir: Path = DECKS_DIR) -> None:
     decks_dir.mkdir(parents=True, exist_ok=True)
 
     data = [card.to_dict() for card in deck]
-
-    path = decks_dir / f"{deck.name}"
+    
+    path = decks_dir / f"{deck.name}.json"
 
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
