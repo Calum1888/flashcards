@@ -1,0 +1,8 @@
+# Flashcards app
+# Requires Python 3.11+ (developed on 3.13).
+#
+# The app itself uses only the standard library (json, pathlib, random),
+# so there are no runtime dependencies. The packages below are for development.
+
+# Testing
+pytest==9.2.0
