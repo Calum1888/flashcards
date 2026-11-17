@@ -73,3 +73,16 @@ def test_shuffle_preserves_deck_order(sample_deck):
 def test_shuffle_returns_same_cards(sample_deck):
     result = sample_deck.shuffled()
     assert len(result) == len(sample_deck)
+
+def test_shuffled_with_count_returns_that_many(sample_deck):
+    assert len(sample_deck.shuffled(count=2)) == 2
+
+
+def test_shuffled_count_larger_than_deck_returns_all(sample_deck):
+    assert len(sample_deck.shuffled(count=100)) == len(sample_deck)
+
+
+def test_shuffled_with_count_returns_cards_from_deck(sample_deck):
+    deck_questions = {card.question for card in sample_deck}
+    result = sample_deck.shuffled(count=3)
+    assert all(card.question in deck_questions for card in result)

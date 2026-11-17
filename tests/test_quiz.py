@@ -1,9 +1,9 @@
 import pytest
 
 from flashcards.models import Card, Deck
-from flashcards.quiz import flashcard, run_quiz, show_summary
-
-
+from flashcards.quiz import flashcard, run_quiz, show_summary, add_card
+from flashcards.exceptions import InvalidCardError
+    
 def fake_inputs(monkeypatch, answers):
     """Make input() return each item in `answers` in turn."""
     responses = iter(answers)
@@ -101,3 +101,40 @@ def test_show_summary_high_score():
 
 def test_show_summary_low_score():
     assert "Keep practicing" in show_summary(1, 4)
+
+# ---- run_quiz with count ----
+
+def test_run_quiz_respects_count(monkeypatch, uniform_deck):
+    fake_inputs(monkeypatch, ["yes", "yes"])           # only two answers supplied
+    assert run_quiz(uniform_deck, count=2) == (2, 2)   # StopIteration if it asks a third
+
+
+# ---- add_card ----
+
+def test_add_card_creates_card(monkeypatch):
+    fake_inputs(monkeypatch, ["What type does **kwargs collect into?", "dict, dictionary"])
+    card = add_card()
+    assert card.question == "What type does **kwargs collect into?"
+    assert card.answers == ["dict", "dictionary"]
+
+
+def test_add_card_cleans_answers(monkeypatch):
+    fake_inputs(monkeypatch, ["Q?", "  dict ,, dictionary , "])
+    assert add_card().answers == ["dict", "dictionary"]
+
+
+def test_add_card_keeps_original_case(monkeypatch):
+    fake_inputs(monkeypatch, ["Which exception does int('abc') raise?", "ValueError"])
+    assert add_card().answers == ["ValueError"]
+
+
+def test_add_card_empty_question_raises(monkeypatch):
+    fake_inputs(monkeypatch, ["   "])
+    with pytest.raises(InvalidCardError):
+        add_card()
+
+
+def test_add_card_no_answers_raises(monkeypatch):
+    fake_inputs(monkeypatch, ["Q?", " , , "])
+    with pytest.raises(InvalidCardError):
+        add_card()

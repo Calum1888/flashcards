@@ -2,7 +2,8 @@ import json
 
 import pytest
 
-from flashcards.storage import save_deck, load_deck
+from flashcards.models import Deck
+from flashcards.storage import save_deck, load_deck, list_decks
 from flashcards.exceptions import DeckNotFoundError, DeckFormatError
 
 
@@ -39,3 +40,22 @@ def test_missing_field_error(tmp_path):
 
     with pytest.raises(DeckFormatError):
         load_deck("incomplete", decks_dir=tmp_path)
+
+def test_list_decks_returns_sorted_names(tmp_path, sample_deck):
+    save_deck(Deck("zeta", sample_deck.cards), decks_dir=tmp_path)
+    save_deck(Deck("alpha", sample_deck.cards), decks_dir=tmp_path)
+    assert list_decks(decks_dir=tmp_path) == ["alpha", "zeta"]
+
+
+def test_list_decks_empty_folder(tmp_path):
+    assert list_decks(decks_dir=tmp_path) == []
+
+
+def test_list_decks_ignores_non_json_files(tmp_path, sample_deck):
+    save_deck(sample_deck, decks_dir=tmp_path)
+    (tmp_path / "notes.txt").write_text("not a deck", encoding="utf-8")
+    assert list_decks(decks_dir=tmp_path) == [sample_deck.name]
+
+
+def test_list_decks_missing_folder(tmp_path):
+    assert list_decks(decks_dir=tmp_path / "does_not_exist") == []
