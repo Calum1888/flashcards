@@ -8,16 +8,15 @@ from flashcards.quiz import run_quiz, show_summary, add_card
 def build_parser():
     parser = argparse.ArgumentParser(prog="flashcards", description="Flashcard quiz app")
     subparsers = parser.add_subparsers(dest="command", required=True)
+
     quiz_parser = subparsers.add_parser("quiz", help="Run a quiz on a deck")
-    quiz_parser = subparsers.add_parser("add", help="Add a new flashcard")
-    
     quiz_parser.add_argument("deck", help="Name of the deck, e.g. python")
     quiz_parser.add_argument("--count", type=int, default=None, help="Number of questions you want to answer")
 
-    subparsers.add_parser("list", help="Show all decks")
-
     add_parser = subparsers.add_parser("add", help="Add a card to a deck")
-    add_parser.add_argument("deck", help="Name of the deck to add to")  
+    add_parser.add_argument("deck", help="Name of the deck to add to")
+
+    subparsers.add_parser("list", help="Show all decks")
 
     return parser
 
