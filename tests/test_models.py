@@ -1,4 +1,30 @@
+import pytest
+
 from models import Card, Deck
+
+@pytest.fixture
+def sample_deck():
+    card_dicts = [{
+        "question": "Which keyword exits a loop immediately?",
+        "answers": ["break"]
+    },
+    {
+        "question": "Which string method removes whitespace from both ends of a string?",
+        "answers": ["strip", "strip()", ".strip()"]
+    },
+    {
+        "question": "Is a tuple mutable or immutable?",
+        "answers": ["immutable"]
+    },
+    {
+        "question": "How many items are in the list returned by \"a,b,c\".split(\",\")?",
+        "answers": ["3", "three"]
+    },
+    {
+        "question": "Which exception is raised by int(\"abc\")?",
+        "answers": ["ValueError"]
+    }]
+    return Deck.from_dicts("sample", card_dicts)
 
 def test_correct_answer_is_accepted():
     card = Card("Is a tuple mutable?", ["immutable"])
@@ -52,3 +78,24 @@ def test_empty_decks_dont_share_cards():
     assert len(deck_2) == 0
 
 def test_from_dicts():
+    cards =[{
+        "question": "What does a function return if it has no return statement?",
+        "answers": ["None"]
+    },
+    {
+        "question": "Which keyword skips the rest of the current loop iteration?",
+        "answers": ["continue"]
+    }]
+
+    deck = Deck.from_dicts("deck_1", cards)
+    assert len(deck) == 2
+    assert all(isinstance(card, Card) for card in deck)
+
+def test_shuffle_preserves_deck_order(sample_deck):
+    deck_order = [card.question for card in sample_deck]
+    sample_deck.shuffled()
+    assert deck_order == [card.question for card in sample_deck]
+
+def test_shuffle_returns_same_cards(sample_deck):
+    result = sample_deck.shuffled()
+    assert len(result) == len(sample_deck)
