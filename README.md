@@ -21,16 +21,7 @@ The app uses only the Python standard library. [pytest](https://docs.pytest.org/
 ## Installation
 
 ```bash
-git clone https://github.com/Calum1888/flashcards.git
-cd flashcards
-
-python -m venv .venv
-# Windows
-.venv\Scripts\activate
-# macOS / Linux
-source .venv/bin/activate
-
-pip install -r requirements.txt
+pip install -e ".[test]"
 ```
 
 ## Usage
@@ -40,7 +31,7 @@ Run all commands from the project root folder.
 ### Take a quiz
 
 ```bash
-python -m flashcards quiz python
+flashcards quiz python
 ```
 
 ```
@@ -60,7 +51,7 @@ Questions are asked in a random order. Answers are not case-sensitive, and surro
 To answer only a set number of questions, use `--count`:
 
 ```bash
-python -m flashcards quiz sql --count 10
+flashcards quiz sql --count 10
 ```
 
 During a quiz:
@@ -70,7 +61,7 @@ During a quiz:
 ### List your decks
 
 ```bash
-python -m flashcards list
+flashcards list
 ```
 
 ```
@@ -82,7 +73,7 @@ python -m flashcards list
 ### Add a card
 
 ```bash
-python -m flashcards add python
+flashcards add python
 ```
 
 ```
@@ -94,8 +85,8 @@ Card added to 'python' (45 cards).
 ### Help
 
 ```bash
-python -m flashcards --help
-python -m flashcards quiz --help
+flashcards --help
+flashcards quiz --help
 ```
 
 ## Deck format
