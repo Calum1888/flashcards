@@ -41,3 +41,9 @@ def save_deck(deck: Deck, decks_dir: Path = DECKS_DIR) -> None:
 
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2)
+
+def list_decks(decks_dir: Path = DECKS_DIR) -> list[str]:
+    """
+    Return the names of all decks in decks_dir, sorted alphabetically.
+    """
+    return sorted(path.stem for path in decks_dir.glob("*.json"))
