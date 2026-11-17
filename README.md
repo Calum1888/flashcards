@@ -1,5 +1,6 @@
 # Flashcards
 
+![Python](https://img.shields.io/badge/python-3.x-blue)
 ![Tests](https://github.com/Calum1888/flashcards/actions/workflows/tests.yml/badge.svg)
 
 Terminal flashcards for data science interview prep. 128 cards on Python, ML and SQL, with lenient answer checking and support for your own decks. Pure Python, tested with pytest.
