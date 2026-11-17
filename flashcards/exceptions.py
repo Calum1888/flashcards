@@ -6,3 +6,6 @@ class DeckNotFoundError(FlashcardError):
 
 class DeckFormatError(FlashcardError):
     """Raised when a deck file is not valid JSON or is missing required fields."""
+
+class InvalidCardError(FlashcardError):
+    """Raised when a new card's question or answers are invalid."""
