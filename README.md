@@ -2,7 +2,7 @@
 
 ![Tests](https://github.com/Calum1888/flashcards/actions/workflows/tests.yml/badge.svg)
 
-A command-line flashcard quiz app written in Python. Decks are stored as JSON files, and you can quiz yourself, list your decks and add new cards from the terminal.
+Terminal flashcards for data science interview prep. 128 cards on Python, ML and SQL, with lenient answer checking and support for your own decks. Pure Python, tested with pytest.
 
 It comes with three decks:
 
