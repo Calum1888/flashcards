@@ -81,10 +81,10 @@ class Deck():
     def add(self, card):
         self.cards.append(card)
         
-    def shuffled(self):
+    def shuffled(self, count: int):
         cards_copy = self.cards.copy()
         random.shuffle(cards_copy)
-        return cards_copy
+        return cards_copy[:count]
 
     def __len__(self):
         return len(self.cards)
