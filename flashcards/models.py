@@ -81,7 +81,7 @@ class Deck():
     def add(self, card):
         self.cards.append(card)
         
-    def shuffled(self, count: int):
+    def shuffled(self, count: int | None = None):
         cards_copy = self.cards.copy()
         random.shuffle(cards_copy)
         return cards_copy[:count]
