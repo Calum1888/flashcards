@@ -1,19 +1,23 @@
 import sys
 import argparse
 
-from flashcards.storage import load_deck, list_decks
+from flashcards.storage import load_deck, save_deck, list_decks
 from flashcards.exceptions import FlashcardError
-from flashcards.quiz import run_quiz, show_summary
+from flashcards.quiz import run_quiz, show_summary, add_card
 
 def build_parser():
     parser = argparse.ArgumentParser(prog="flashcards", description="Flashcard quiz app")
     subparsers = parser.add_subparsers(dest="command", required=True)
     quiz_parser = subparsers.add_parser("quiz", help="Run a quiz on a deck")
+    quiz_parser = subparsers.add_parser("add", help="Add a new flashcard")
     
     quiz_parser.add_argument("deck", help="Name of the deck, e.g. python")
     quiz_parser.add_argument("--count", type=int, default=None, help="Number of questions you want to answer")
 
     subparsers.add_parser("list", help="Show all decks")
+
+    add_parser = subparsers.add_parser("add", help="Add a card to a deck")
+    add_parser.add_argument("deck", help="Name of the deck to add to")  
 
     return parser
 
@@ -38,6 +42,13 @@ def main():
                         print(f"{number}. {deck.name} ({len(deck)} cards)")
                     except FlashcardError as err:
                         print(f"{name} (could not load: {err})")
+            case "add":
+                deck = load_deck(args.deck)
+                card = add_card()
+                deck.add(card)
+                save_deck(deck)
+                print(f"Card added to {deck.name!r} ({len(deck)} cards).")
+            
     except FlashcardError as err:
         print(f"Error: {err}", file=sys.stderr)
         sys.exit(1)
