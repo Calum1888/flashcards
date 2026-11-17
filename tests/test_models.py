@@ -40,4 +40,15 @@ def test_from_to_dict_equality():
     assert copy.question == card.question 
     assert copy.answers == card.answers 
 
+def test_empty_deck_length():
+    assert len(Deck("empty")) == 0
 
+def test_empty_decks_dont_share_cards():
+    card = Card("Which exception is raised by int(\"abc\")?", ["ValueError"])
+    deck_1 = Deck("empty")
+    deck_2 = Deck("empty")
+    deck_1.add(card)
+    assert len(deck_1) == 1
+    assert len(deck_2) == 0
+
+def test_from_dicts():
