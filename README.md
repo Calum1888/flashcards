@@ -130,6 +130,7 @@ flashcards/
 ├── conftest.py          # shared test fixtures
 ├── requirements.txt
 └── README.md
+└── CONTRIBUTING.md
 ```
 
 ## Running the tests
