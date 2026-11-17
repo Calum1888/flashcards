@@ -87,20 +87,6 @@ def show_summary(score: int, answered: int) -> str:
         else:
             return f'You answered {answered} questions and got {pct}%. Keep practicing!'
 
-def main() -> None:
-    print("Flashcard quiz. Type 'skip' to skip a question or 'quit' to stop.\n")
-
-    try:
-        deck = load_deck("python")
-    except FlashcardError as err:
-        print(f"Error: {err}")
-        return
-
-    score, answered = run_quiz(deck)
-    print(show_summary(score, answered))
-
-if __name__ == "__main__":
-    main()
 
 
 
