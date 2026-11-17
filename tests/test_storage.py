@@ -2,8 +2,8 @@ import json
 
 import pytest
 
-from storage import save_deck, load_deck
-from exceptions import DeckNotFoundError, DeckFormatError
+from flashcards.storage import save_deck, load_deck
+from flashcards.exceptions import DeckNotFoundError, DeckFormatError
 
 
 def test_save_load_consistency(sample_deck, tmp_path):

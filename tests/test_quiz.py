@@ -1,7 +1,7 @@
 import pytest
 
-from models import Card, Deck
-from quiz import flashcard, run_quiz, show_summary
+from flashcards.models import Card, Deck
+from flashcards.quiz import flashcard, run_quiz, show_summary
 
 
 def fake_inputs(monkeypatch, answers):

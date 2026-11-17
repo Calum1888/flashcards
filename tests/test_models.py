@@ -1,4 +1,4 @@
-from models import Card, Deck
+from flashcards.models import Card, Deck
 
 def test_correct_answer_is_accepted():
     card = Card("Is a tuple mutable?", ["immutable"])

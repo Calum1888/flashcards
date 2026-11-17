@@ -1,6 +1,6 @@
 import pytest
 
-from models import Deck
+from flashcards.models import Deck
 
 @pytest.fixture
 def sample_deck():

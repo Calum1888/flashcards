@@ -1,8 +1,8 @@
 import json
 from pathlib import Path
-from models import Deck, Card
+from flashcards.models import Deck, Card
 
-from exceptions import DeckNotFoundError, DeckFormatError
+from flashcards.exceptions import DeckNotFoundError, DeckFormatError
 
 DECKS_DIR = Path(__file__).parent / "decks"
 

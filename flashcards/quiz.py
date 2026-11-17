@@ -1,6 +1,6 @@
-from models import normalize_string, Card, Deck
-from storage import load_deck
-from exceptions import FlashcardError
+from flashcards.models import normalize_string, Card, Deck
+from flashcards.storage import load_deck
+from flashcards.exceptions import FlashcardError
 
 
 card_data = load_deck('python')
