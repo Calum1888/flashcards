@@ -22,7 +22,7 @@ def main():
             case "quiz":
                 deck = load_deck(args.deck)
                 print("Type 'skip' to skip a question or 'quit' to stop.\n")
-                score, answered = run_quiz(deck)
+                score, answered = run_quiz(deck, args.count)
                 print(show_summary(score, answered))
     except FlashcardError as err:
         print(f"Error: {err}", file=sys.stderr)

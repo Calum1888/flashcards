@@ -35,7 +35,7 @@ def flashcard(card: Card) -> str:
         print(f'Unlucky, incorrect answer. The correct answer is {card.answers[0]}')
         return 'incorrect'
 
-def run_quiz(deck: Deck) -> tuple[int, int]:
+def run_quiz(deck: Deck, count: int) -> tuple[int, int]:
     '''
     Runs through all the flashcards in the deck, keeping track of the number answered and the score for correct answers.
 
@@ -50,7 +50,7 @@ def run_quiz(deck: Deck) -> tuple[int, int]:
     answered = 0
 
     # loops through all the cards in the deck
-    for card in deck.shuffled():
+    for card in deck.shuffled(count):
 
         # loads the card only once for each card instead of for every different outcome
         result = flashcard(card)
